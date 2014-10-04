@@ -1,0 +1,23 @@
+Configuring crypto-pubkey-0.2.4...
+Building crypto-pubkey-0.2.4...
+Preprocessing library crypto-pubkey-0.2.4...
+[ 1 of 15] Compiling Crypto.PubKey.ECC.Prim ( Crypto/PubKey/ECC/Prim.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/ECC/Prim.o )
+[ 2 of 15] Compiling Crypto.PubKey.ECC.Generate ( Crypto/PubKey/ECC/Generate.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/ECC/Generate.o )
+[ 3 of 15] Compiling Crypto.PubKey.DH ( Crypto/PubKey/DH.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/DH.o )
+[ 4 of 15] Compiling Crypto.PubKey.HashDescr ( Crypto/PubKey/HashDescr.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/HashDescr.o )
+[ 5 of 15] Compiling Crypto.PubKey.MaskGenFunction ( Crypto/PubKey/MaskGenFunction.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/MaskGenFunction.o )
+[ 6 of 15] Compiling Crypto.PubKey.DSA ( Crypto/PubKey/DSA.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/DSA.o )
+[ 7 of 15] Compiling Crypto.PubKey.ECC.ECDSA ( Crypto/PubKey/ECC/ECDSA.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/ECC/ECDSA.o )
+[ 8 of 15] Compiling Crypto.PubKey.ElGamal ( Crypto/PubKey/ElGamal.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/ElGamal.o )
+[ 9 of 15] Compiling Crypto.PubKey.Internal ( Crypto/PubKey/Internal.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/Internal.o )
+[10 of 15] Compiling Crypto.PubKey.RSA.Types ( Crypto/PubKey/RSA/Types.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/RSA/Types.o )
+[11 of 15] Compiling Crypto.PubKey.RSA.Prim ( Crypto/PubKey/RSA/Prim.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/RSA/Prim.o )
+[12 of 15] Compiling Crypto.PubKey.RSA ( Crypto/PubKey/RSA.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/RSA.o )
+[13 of 15] Compiling Crypto.PubKey.RSA.PKCS15 ( Crypto/PubKey/RSA/PKCS15.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/RSA/PKCS15.o )
+[14 of 15] Compiling Crypto.PubKey.RSA.OAEP ( Crypto/PubKey/RSA/OAEP.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/RSA/OAEP.o )
+[15 of 15] Compiling Crypto.PubKey.RSA.PSS ( Crypto/PubKey/RSA/PSS.hs, dist/dist-sandbox-caad765c/build/Crypto/PubKey/RSA/PSS.o )
+In-place registering crypto-pubkey-0.2.4...
+Creating package registration file: /tmp/pkgConf-crypto-pubkey-0.228535.4
+Installing library in
+/home/marius/wip/subsonic-cli/.cabal-sandbox/lib/x86_64-linux-ghc-7.8.3/crypto-pubkey-0.2.4
+Registering crypto-pubkey-0.2.4...

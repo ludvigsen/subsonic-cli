@@ -1,0 +1,43 @@
+[1 of 1] Compiling Main             ( /tmp/SDL-mixer-0.6.1-23929/SDL-mixer-0.6.1/dist/dist-sandbox-caad765c/setup/setup.hs, /tmp/SDL-mixer-0.6.1-23929/SDL-mixer-0.6.1/dist/dist-sandbox-caad765c/setup/Main.o )
+Linking /tmp/SDL-mixer-0.6.1-23929/SDL-mixer-0.6.1/dist/dist-sandbox-caad765c/setup/setup ...
+Configuring SDL-mixer-0.6.1...
+configure: WARNING: unrecognized options: --with-compiler, --with-gcc
+checking for sdl-config... /usr/bin/sdl-config
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for Mix_OpenAudio in -lSDL_mixer... yes
+configure: creating ./config.status
+config.status: creating config.mk
+config.status: creating SDL-mixer.buildinfo
+config.status: creating includes/HsSDLConfig.h
+configure: WARNING: unrecognized options: --with-compiler, --with-gcc
+Building SDL-mixer-0.6.1...
+Preprocessing library SDL-mixer-0.6.1...
+[1 of 7] Compiling Graphics.UI.SDL.Mixer.Version ( dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Mixer/Version.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Mixer/Version.o )
+
+Graphics/UI/SDL/Mixer/Version.hsc:14:10: Warning:
+    No explicit implementation for
+      either ‘Foreign.Storable.poke’
+             or
+             ‘Foreign.Storable.pokeElemOff’
+             or
+             ‘Foreign.Storable.pokeByteOff’
+    In the instance declaration for ‘Storable SDLVersion’
+[2 of 7] Compiling Graphics.UI.SDL.Mixer.Types ( Graphics/UI/SDL/Mixer/Types.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Mixer/Types.o )
+[3 of 7] Compiling Graphics.UI.SDL.Mixer.Channels ( Graphics/UI/SDL/Mixer/Channels.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Mixer/Channels.o )
+[4 of 7] Compiling Graphics.UI.SDL.Mixer.Music ( Graphics/UI/SDL/Mixer/Music.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Mixer/Music.o )
+[5 of 7] Compiling Graphics.UI.SDL.Mixer.Samples ( Graphics/UI/SDL/Mixer/Samples.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Mixer/Samples.o )
+[6 of 7] Compiling Graphics.UI.SDL.Mixer.General ( dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Mixer/General.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Mixer/General.o )
+[7 of 7] Compiling Graphics.UI.SDL.Mixer ( Graphics/UI/SDL/Mixer.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Mixer.o )
+In-place registering SDL-mixer-0.6.1...
+Creating package registration file: /tmp/pkgConf-SDL-mixer-0.623929.1
+Installing library in
+/home/marius/wip/subsonic-cli/.cabal-sandbox/lib/x86_64-linux-ghc-7.8.3/SDL-mixer-0.6.1
+Registering SDL-mixer-0.6.1...

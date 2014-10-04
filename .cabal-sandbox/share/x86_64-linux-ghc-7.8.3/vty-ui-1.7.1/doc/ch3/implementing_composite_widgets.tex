@@ -1,0 +1,124 @@
+\section{Composite Widgets}
+
+So far we have looked at single-purpose widgets which use the
+\fw{Widget} type directly.  However, embedding widget state in the
+\fw{Widget} type is not always appropriate or straightforward for more
+complex, composite widgets.
+
+The \vtyui\ library provides some ``widgets'' which don't fit this
+pattern: \fw{Dialog} and \fw{DirBrowser} are two examples.
+Furthermore, as the base set of widgets provided by the library
+becomes richer, fewer and fewer widgets should be implemented using
+the basic \fw{Widget} framework.
+
+These composite widgets are actually entire interfaces, complete with
+multiple focusable widgets and focus groups.  These widgets don't take
+the form of \fw{Widget Dialog} or \fw{Widget DirBrowser}; they
+\textit{could} be implemented that way, but we'd find that many of the
+\fw{WidgetImpl} functions would end up deferring to their child
+widgets anyway, and their \fw{render\_} implementations would be
+cumbersome at best.
+
+Instead, we invert the widget organization: we create a type (e.g.,
+\fw{Dialog}) which contains the actual widget(s) to be rendered, as
+well as other book-keeping internals, and we return that from our
+constructor.  This makes it easier to implement such widgets since we
+are less concerned with their inner workings and more concerned with
+returning something high-level that has the right behaviors.
+
+The pattern we use in these situations is to write a constructor which
+does all of the widget creation, layout, and event handler
+registration, and returns the concrete type of the interface along
+with a \fw{FocusGroup} which the caller can use to integrate the
+interface into an application.
+
+For example: suppose we want to create a ``phone number input'' widget
+-- \fw{PhoneInput}, say -- which will allow users to input phone
+numbers.  The \fw{PhoneInput} will have three \fw{Edit} widgets and
+will manage tabbing between them and might even do such things as data
+validation on the input.  Here's a suggestive example for how we might
+implement such a thing without going to all the trouble of
+implementing \fw{WidgetImpl}'s interface.  First we provide the types:
+
+\begin{haskellcode}
+ data PhoneNumber = PhoneNumber T.Text T.Text T.Text
+                    deriving (Show)
+
+ -- This type isn't pretty, but we have to specify the type
+ -- of the complete interface.  Initially you can let the
+ -- compiler tell you what it is.
+ type T = Box (Box
+               (Box (Box (HFixed Edit) FormattedText) (HFixed Edit))
+               FormattedText) (HFixed Edit)
+
+ data PhoneInput =
+   PhoneInput { phoneInputWidget :: Widget T
+              , edit1 :: Widget Edit
+              , edit2 :: Widget Edit
+              , edit3 :: Widget Edit
+              , activateHandlers :: Handlers PhoneNumber
+              }
+\end{haskellcode}
+
+Then, we provide the constructor:
+
+% Let this block span a page boundary since it's so big that it's
+% likely, and we don't want to bump it down unless it looks good. :)
+\begin{haskellcode*}{samepage=false}
+ newPhoneInput :: IO (PhoneInput, Widget FocusGroup)
+ newPhoneInput = do
+   ahs <- newHandlers
+   e1 <- editWidget
+   e2 <- editWidget
+   e3 <- editWidget
+
+   ui <- (hFixed 4 e1) <++>
+         (plainText "-") <++>
+         (hFixed 4 e2) <++>
+         (plainText "-") <++>
+         (hFixed 5 e3)
+
+   let w = PhoneInput ui e1 e2 e3 ahs
+       doFireEvent = const $ do
+         num <- mkPhoneNumber
+         fireEvent w (return . activateHandlers) num
+
+       mkPhoneNumber = do
+         s1 <- getEditText e1
+         s2 <- getEditText e2
+         s3 <- getEditText e3
+         return $ PhoneNumber s1 s2 s3
+
+   e1 `onActivate` doFireEvent
+   e2 `onActivate` doFireEvent
+   e3 `onActivate` doFireEvent
+
+   e1 `onChange` \s -> when (T.length s == 3) $ focus e2
+   e2 `onChange` \s -> when (T.length s == 3) $ focus e3
+
+   fg <- newFocusGroup
+   mapM_ (addToFocusGroup fg) [e1, e2, e3]
+   return (w, fg)
+\end{haskellcode*}
+
+Then we provide a function to register phone number handlers:
+
+\begin{haskellcode}
+ onPhoneInputActivate :: PhoneInput
+                      -> (PhoneNumber -> IO ()) -> IO ()
+ onPhoneInputActivate input handler =
+   addHandler (return . activateHandlers) input handler
+\end{haskellcode}
+
+When the user presses \fw{Enter} in one of the phone number input
+widgets, thus ``activating'' it, we will invoke all phone number input
+handlers with a \fw{PhoneNumber} value.\footnote{Assume that we would
+  also do some kind of validation and decide whether to call the
+  handlers accordingly.  We might even consider supporting ``error''
+  event handlers for the widget to report validation errors to be
+  displayed elsewhere in the interface!}
+
+In the calling environment, the caller can then add the
+\fw{phoneInputWidget} to the interface and merge the returned
+\fw{FocusGroup} as described in Section
+\ref{sec:merging_focus_groups}.

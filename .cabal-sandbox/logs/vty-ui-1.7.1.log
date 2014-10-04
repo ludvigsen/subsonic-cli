@@ -1,0 +1,55 @@
+Configuring vty-ui-1.7.1...
+Building vty-ui-1.7.1...
+Preprocessing library vty-ui-1.7.1...
+[ 1 of 27] Compiling Graphics.Vty.Widgets.Alignment ( src/Graphics/Vty/Widgets/Alignment.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Alignment.o )
+[ 2 of 27] Compiling Graphics.Vty.Widgets.Events ( src/Graphics/Vty/Widgets/Events.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Events.o )
+[ 3 of 27] Compiling Graphics.Vty.Widgets.Skins ( src/Graphics/Vty/Widgets/Skins.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Skins.o )
+[ 4 of 27] Compiling Graphics.Vty.Widgets.Util ( src/Graphics/Vty/Widgets/Util.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Util.o )
+[ 5 of 27] Compiling Text.Trans.Tokenize ( src/Text/Trans/Tokenize.hs, dist/dist-sandbox-caad765c/build/Text/Trans/Tokenize.o )
+[ 6 of 27] Compiling Graphics.Vty.Widgets.TextZipper ( src/Graphics/Vty/Widgets/TextZipper.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/TextZipper.o )
+[ 7 of 27] Compiling Graphics.Vty.Widgets.TextClip ( src/Graphics/Vty/Widgets/TextClip.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/TextClip.o )
+[ 8 of 27] Compiling Graphics.Vty.Widgets.Core ( src/Graphics/Vty/Widgets/Core.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Core.o )
+[ 9 of 27] Compiling Graphics.Vty.Widgets.Box ( src/Graphics/Vty/Widgets/Box.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Box.o )
+[10 of 27] Compiling Graphics.Vty.Widgets.Text ( src/Graphics/Vty/Widgets/Text.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Text.o )
+[11 of 27] Compiling Graphics.Vty.Widgets.Borders ( src/Graphics/Vty/Widgets/Borders.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Borders.o )
+[12 of 27] Compiling Graphics.Vty.Widgets.Edit ( src/Graphics/Vty/Widgets/Edit.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Edit.o )
+[13 of 27] Compiling Graphics.Vty.Widgets.CheckBox ( src/Graphics/Vty/Widgets/CheckBox.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/CheckBox.o )
+[14 of 27] Compiling Graphics.Vty.Widgets.Padding ( src/Graphics/Vty/Widgets/Padding.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Padding.o )
+[15 of 27] Compiling Graphics.Vty.Widgets.Limits ( src/Graphics/Vty/Widgets/Limits.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Limits.o )
+[16 of 27] Compiling Graphics.Vty.Widgets.Fixed ( src/Graphics/Vty/Widgets/Fixed.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Fixed.o )
+[17 of 27] Compiling Graphics.Vty.Widgets.List ( src/Graphics/Vty/Widgets/List.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/List.o )
+[18 of 27] Compiling Graphics.Vty.Widgets.Fills ( src/Graphics/Vty/Widgets/Fills.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Fills.o )
+[19 of 27] Compiling Graphics.Vty.Widgets.Centering ( src/Graphics/Vty/Widgets/Centering.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Centering.o )
+[20 of 27] Compiling Graphics.Vty.Widgets.Table ( src/Graphics/Vty/Widgets/Table.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Table.o )
+[21 of 27] Compiling Graphics.Vty.Widgets.Button ( src/Graphics/Vty/Widgets/Button.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Button.o )
+[22 of 27] Compiling Graphics.Vty.Widgets.Dialog ( src/Graphics/Vty/Widgets/Dialog.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Dialog.o )
+[23 of 27] Compiling Graphics.Vty.Widgets.ProgressBar ( src/Graphics/Vty/Widgets/ProgressBar.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/ProgressBar.o )
+[24 of 27] Compiling Graphics.Vty.Widgets.DirBrowser ( src/Graphics/Vty/Widgets/DirBrowser.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/DirBrowser.o )
+[25 of 27] Compiling Graphics.Vty.Widgets.Group ( src/Graphics/Vty/Widgets/Group.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/Group.o )
+[26 of 27] Compiling Graphics.Vty.Widgets.EventLoop ( src/Graphics/Vty/Widgets/EventLoop.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/EventLoop.o )
+[27 of 27] Compiling Graphics.Vty.Widgets.All ( src/Graphics/Vty/Widgets/All.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Widgets/All.o )
+In-place registering vty-ui-1.7.1...
+Preprocessing executable 'vty-ui-tests' for vty-ui-1.7.1...
+[ 1 of 17] Compiling Graphics.Vty.Widgets.Events ( src/Graphics/Vty/Widgets/Events.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Graphics/Vty/Widgets/Events.o )
+[ 2 of 17] Compiling Graphics.Vty.Widgets.Skins ( src/Graphics/Vty/Widgets/Skins.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Graphics/Vty/Widgets/Skins.o )
+[ 3 of 17] Compiling Graphics.Vty.Widgets.Util ( src/Graphics/Vty/Widgets/Util.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Graphics/Vty/Widgets/Util.o )
+[ 4 of 17] Compiling Text.Trans.Tokenize ( src/Text/Trans/Tokenize.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Text/Trans/Tokenize.o )
+[ 5 of 17] Compiling Tests.Instances  ( test/src/Tests/Instances.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Tests/Instances.o )
+[ 6 of 17] Compiling Graphics.Vty.Widgets.Core ( src/Graphics/Vty/Widgets/Core.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Graphics/Vty/Widgets/Core.o )
+[ 7 of 17] Compiling Tests.Util       ( test/src/Tests/Util.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Tests/Util.o )
+[ 8 of 17] Compiling Graphics.Vty.Widgets.TextZipper ( src/Graphics/Vty/Widgets/TextZipper.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Graphics/Vty/Widgets/TextZipper.o )
+[ 9 of 17] Compiling Graphics.Vty.Widgets.TextClip ( src/Graphics/Vty/Widgets/TextClip.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Graphics/Vty/Widgets/TextClip.o )
+[10 of 17] Compiling Graphics.Vty.Widgets.Edit ( src/Graphics/Vty/Widgets/Edit.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Graphics/Vty/Widgets/Edit.o )
+[11 of 17] Compiling Graphics.Vty.Widgets.Text ( src/Graphics/Vty/Widgets/Text.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Graphics/Vty/Widgets/Text.o )
+[12 of 17] Compiling Tests.TextZipper ( test/src/Tests/TextZipper.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Tests/TextZipper.o )
+[13 of 17] Compiling Tests.TextClip   ( test/src/Tests/TextClip.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Tests/TextClip.o )
+[14 of 17] Compiling Tests.Edit       ( test/src/Tests/Edit.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Tests/Edit.o )
+[15 of 17] Compiling Tests.Tokenize   ( test/src/Tests/Tokenize.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Tests/Tokenize.o )
+[16 of 17] Compiling Tests.FormattedText ( test/src/Tests/FormattedText.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Tests/FormattedText.o )
+[17 of 17] Compiling Main             ( test/TestDriver.hs, dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests-tmp/Main.o )
+Linking dist/dist-sandbox-caad765c/build/vty-ui-tests/vty-ui-tests ...
+Creating package registration file: /tmp/pkgConf-vty-ui-1.728535.1
+Installing library in
+/home/marius/wip/subsonic-cli/.cabal-sandbox/lib/x86_64-linux-ghc-7.8.3/vty-ui-1.7.1
+Installing executable(s) in /home/marius/wip/subsonic-cli/.cabal-sandbox/bin
+Registering vty-ui-1.7.1...

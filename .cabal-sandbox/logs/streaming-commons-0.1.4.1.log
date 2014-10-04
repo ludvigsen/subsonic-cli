@@ -1,0 +1,32 @@
+Configuring streaming-commons-0.1.4.1...
+Building streaming-commons-0.1.4.1...
+Preprocessing library streaming-commons-0.1.4.1...
+[ 1 of 15] Compiling Data.Streaming.Zlib.Lowlevel ( Data/Streaming/Zlib/Lowlevel.hs, dist/dist-sandbox-caad765c/build/Data/Streaming/Zlib/Lowlevel.o )
+[ 2 of 15] Compiling Data.Streaming.Zlib ( Data/Streaming/Zlib.hs, dist/dist-sandbox-caad765c/build/Data/Streaming/Zlib.o )
+[ 3 of 15] Compiling Data.Text.Internal.Unsafe.Shift ( Data/Text/Internal/Unsafe/Shift.hs, dist/dist-sandbox-caad765c/build/Data/Text/Internal/Unsafe/Shift.o )
+[ 4 of 15] Compiling Data.Text.Internal.Unsafe.Char ( Data/Text/Internal/Unsafe/Char.hs, dist/dist-sandbox-caad765c/build/Data/Text/Internal/Unsafe/Char.o )
+[ 5 of 15] Compiling Data.Text.Internal.Encoding.Utf8 ( Data/Text/Internal/Encoding/Utf8.hs, dist/dist-sandbox-caad765c/build/Data/Text/Internal/Encoding/Utf8.o )
+[ 6 of 15] Compiling Data.Text.Internal.Encoding.Utf32 ( Data/Text/Internal/Encoding/Utf32.hs, dist/dist-sandbox-caad765c/build/Data/Text/Internal/Encoding/Utf32.o )
+[ 7 of 15] Compiling Data.Text.Internal.Encoding.Utf16 ( Data/Text/Internal/Encoding/Utf16.hs, dist/dist-sandbox-caad765c/build/Data/Text/Internal/Encoding/Utf16.o )
+[ 8 of 15] Compiling Data.Streaming.Text ( Data/Streaming/Text.hs, dist/dist-sandbox-caad765c/build/Data/Streaming/Text.o )
+
+Data/Streaming/Text.hs:95:15: Warning:
+    In the use of ‘textP’ (imported from Data.Text.Internal):
+    Deprecated: "Use text instead"
+
+Data/Streaming/Text.hs:141:29: Warning:
+    In the use of ‘textP’ (imported from Data.Text.Internal):
+    Deprecated: "Use text instead"
+[ 9 of 15] Compiling Data.Streaming.Process.Internal ( Data/Streaming/Process/Internal.hs, dist/dist-sandbox-caad765c/build/Data/Streaming/Process/Internal.o )
+[10 of 15] Compiling Data.Streaming.Process ( Data/Streaming/Process.hs, dist/dist-sandbox-caad765c/build/Data/Streaming/Process.o )
+[11 of 15] Compiling Data.Streaming.Network.Internal ( Data/Streaming/Network/Internal.hs, dist/dist-sandbox-caad765c/build/Data/Streaming/Network/Internal.o )
+[12 of 15] Compiling Data.Streaming.Network ( Data/Streaming/Network.hs, dist/dist-sandbox-caad765c/build/Data/Streaming/Network.o )
+[13 of 15] Compiling Data.Streaming.Filesystem ( Data/Streaming/Filesystem.hs, dist/dist-sandbox-caad765c/build/Data/Streaming/Filesystem.o )
+[14 of 15] Compiling Data.Streaming.FileRead ( Data/Streaming/FileRead.hs, dist/dist-sandbox-caad765c/build/Data/Streaming/FileRead.o )
+[15 of 15] Compiling Data.Streaming.Blaze ( Data/Streaming/Blaze.hs, dist/dist-sandbox-caad765c/build/Data/Streaming/Blaze.o )
+In-place registering streaming-commons-0.1.4.1...
+Creating package registration file:
+/tmp/pkgConf-streaming-commons-0.1.428535.1
+Installing library in
+/home/marius/wip/subsonic-cli/.cabal-sandbox/lib/x86_64-linux-ghc-7.8.3/streaming-commons-0.1.4.1
+Registering streaming-commons-0.1.4.1...

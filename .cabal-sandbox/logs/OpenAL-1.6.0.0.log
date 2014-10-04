@@ -1,0 +1,38 @@
+Configuring OpenAL-1.6.0.0...
+Building OpenAL-1.6.0.0...
+Preprocessing library OpenAL-1.6.0.0...
+[ 1 of 30] Compiling Sound.OpenAL.Config ( Sound/OpenAL/Config.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/Config.o )
+[ 2 of 30] Compiling Sound.OpenAL.ALC.BasicTypes ( Sound/OpenAL/ALC/BasicTypes.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/ALC/BasicTypes.o )
+[ 3 of 30] Compiling Sound.OpenAL.ALC.String ( Sound/OpenAL/ALC/String.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/ALC/String.o )
+[ 4 of 30] Compiling Sound.OpenAL.Constants ( Sound/OpenAL/Constants.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/Constants.o )
+[ 5 of 30] Compiling Sound.OpenAL.ALC.ALCboolean ( Sound/OpenAL/ALC/ALCboolean.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/ALC/ALCboolean.o )
+[ 6 of 30] Compiling Sound.OpenAL.ALC.QueryUtils ( Sound/OpenAL/ALC/QueryUtils.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/ALC/QueryUtils.o )
+[ 7 of 30] Compiling Sound.OpenAL.ALC.Device ( Sound/OpenAL/ALC/Device.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/ALC/Device.o )
+[ 8 of 30] Compiling Sound.OpenAL.ALC.Extensions ( Sound/OpenAL/ALC/Extensions.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/ALC/Extensions.o )
+[ 9 of 30] Compiling Sound.OpenAL.ALC.Errors ( Sound/OpenAL/ALC/Errors.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/ALC/Errors.o )
+[10 of 30] Compiling Sound.OpenAL.ALC.Context ( Sound/OpenAL/ALC/Context.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/ALC/Context.o )
+[11 of 30] Compiling Sound.OpenAL.AL.PeekPoke ( Sound/OpenAL/AL/PeekPoke.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/PeekPoke.o )
+[12 of 30] Compiling Sound.OpenAL.AL.BasicTypes ( Sound/OpenAL/AL/BasicTypes.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/BasicTypes.o )
+[13 of 30] Compiling Sound.OpenAL.AL.Format ( Sound/OpenAL/AL/Format.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/Format.o )
+[14 of 30] Compiling Sound.OpenAL.AL.SourceState ( Sound/OpenAL/AL/SourceState.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/SourceState.o )
+[15 of 30] Compiling Sound.OpenAL.AL.ALboolean ( Sound/OpenAL/AL/ALboolean.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/ALboolean.o )
+[16 of 30] Compiling Sound.OpenAL.AL.BufferInternal ( Sound/OpenAL/AL/BufferInternal.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/BufferInternal.o )
+[17 of 30] Compiling Sound.OpenAL.AL.String ( Sound/OpenAL/AL/String.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/String.o )
+[18 of 30] Compiling Sound.OpenAL.AL.QueryUtils ( Sound/OpenAL/AL/QueryUtils.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/QueryUtils.o )
+[19 of 30] Compiling Sound.OpenAL.AL.Errors ( Sound/OpenAL/AL/Errors.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/Errors.o )
+[20 of 30] Compiling Sound.OpenAL.AL.Buffer ( Sound/OpenAL/AL/Buffer.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/Buffer.o )
+[21 of 30] Compiling Sound.OpenAL.ALC.Capture ( Sound/OpenAL/ALC/Capture.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/ALC/Capture.o )
+[22 of 30] Compiling Sound.OpenAL.AL.StringQueries ( Sound/OpenAL/AL/StringQueries.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/StringQueries.o )
+[23 of 30] Compiling Sound.OpenAL.AL.Listener ( Sound/OpenAL/AL/Listener.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/Listener.o )
+[24 of 30] Compiling Sound.OpenAL.AL.Source ( Sound/OpenAL/AL/Source.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/Source.o )
+[25 of 30] Compiling Sound.OpenAL.AL.Attenuation ( Sound/OpenAL/AL/Attenuation.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/Attenuation.o )
+[26 of 30] Compiling Sound.OpenAL.AL.Extensions ( Sound/OpenAL/AL/Extensions.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/Extensions.o )
+[27 of 30] Compiling Sound.OpenAL.AL.Doppler ( Sound/OpenAL/AL/Doppler.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL/Doppler.o )
+[28 of 30] Compiling Sound.OpenAL.ALC ( Sound/OpenAL/ALC.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/ALC.o )
+[29 of 30] Compiling Sound.OpenAL.AL  ( Sound/OpenAL/AL.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL/AL.o )
+[30 of 30] Compiling Sound.OpenAL     ( Sound/OpenAL.hs, dist/dist-sandbox-caad765c/build/Sound/OpenAL.o )
+In-place registering OpenAL-1.6.0.0...
+Creating package registration file: /tmp/pkgConf-OpenAL-1.6.028535.0
+Installing library in
+/home/marius/wip/subsonic-cli/.cabal-sandbox/lib/x86_64-linux-ghc-7.8.3/OpenAL-1.6.0.0
+Registering OpenAL-1.6.0.0...

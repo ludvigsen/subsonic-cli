@@ -1,0 +1,46 @@
+\section{Handling User Input}
+
+Many widgets in \vtyui\ can accept user input.  A widget can accept
+user input if (1) it has one or more \textit{key event handlers}
+attached to it and (2) if it currently has the \textit{focus}.  The
+concept of focus in \vtyui\ works the same as in other user interface
+toolkits: essentially, only one widget has the focus and any user
+input is passed to that widget for handling.
+
+Key event handlers can be added to any \fw{Widget a} as follows:
+
+\begin{haskellcode}
+ w <- someWidget
+ w `onKeyPressed` \this key modifiers -> do
+   ...
+   return False
+\end{haskellcode}
+
+The handler must return \fw{IO Bool}; \fw{True} indicates that the
+handler processed the key event and took action and \fw{False}
+indicates that the handler declined to handle the event.  The event
+handler is passed the keystoke itself along with any modifier keys
+detected by the underlying Vty input processing.
+
+Key event handlers are invoked in the order in which they are added to
+the widget.  In the following example, the first handler will decline
+the \fw{'q'} key event but the second one will process it:
+
+\begin{haskellcode}
+ w `onKeyPressed` \_ key _ ->
+   if key == KASCII 'f' then
+     (launchTheMissiles >> return True) else
+     return False
+
+ w `onKeyPressed` \_ key _ ->
+   if key == KASCII 'q' then
+     exitSuccess else return False
+\end{haskellcode}
+
+This functionality allows any widget to have its own "default" input
+event handling while still allowing you to add custom input event
+handling.
+
+Although any widget -- even a basic text widget -- can accept input
+events in this way, the events will only reach the widget if it has the
+focus.  The way we manage focus is with "focus groups."

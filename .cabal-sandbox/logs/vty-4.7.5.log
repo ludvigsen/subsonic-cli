@@ -1,0 +1,117 @@
+Configuring vty-4.7.5...
+Building vty-4.7.5...
+Preprocessing library vty-4.7.5...
+[ 1 of 20] Compiling Data.Terminfo.Parse ( src/Data/Terminfo/Parse.hs, dist/dist-sandbox-caad765c/build/Data/Terminfo/Parse.o )
+[ 2 of 20] Compiling Data.Marshalling ( src/Data/Marshalling.hs, dist/dist-sandbox-caad765c/build/Data/Marshalling.o )
+[ 3 of 20] Compiling Data.Terminfo.Eval ( src/Data/Terminfo/Eval.hs, dist/dist-sandbox-caad765c/build/Data/Terminfo/Eval.o )
+[ 4 of 20] Compiling Codec.Binary.UTF8.Width ( src/Codec/Binary/UTF8/Width.hs, dist/dist-sandbox-caad765c/build/Codec/Binary/UTF8/Width.o )
+[ 5 of 20] Compiling Graphics.Vty.Attributes.Color ( src/Graphics/Vty/Attributes/Color.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Attributes/Color.o )
+[ 6 of 20] Compiling Graphics.Vty.Attributes.Color240 ( src/Graphics/Vty/Attributes/Color240.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Attributes/Color240.o )
+[ 7 of 20] Compiling Graphics.Vty.Attributes ( src/Graphics/Vty/Attributes.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Attributes.o )
+[ 8 of 20] Compiling Graphics.Vty.Image ( src/Graphics/Vty/Image.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Image.o )
+[ 9 of 20] Compiling Graphics.Vty.DisplayAttributes ( src/Graphics/Vty/DisplayAttributes.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/DisplayAttributes.o )
+[10 of 20] Compiling Graphics.Vty.LLInput ( src/Graphics/Vty/LLInput.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/LLInput.o )
+
+src/Graphics/Vty/LLInput.hs:163:89: Warning:
+    In the use of ‘tiGetStr’
+    (imported from System.Console.Terminfo, but defined in System.Console.Terminfo.Base):
+    Deprecated: "use tiGetOutput instead."
+[11 of 20] Compiling Graphics.Vty.DisplayRegion ( src/Graphics/Vty/DisplayRegion.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/DisplayRegion.o )
+[12 of 20] Compiling Graphics.Vty.Picture ( src/Graphics/Vty/Picture.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Picture.o )
+[13 of 20] Compiling Graphics.Vty.Span ( src/Graphics/Vty/Span.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Span.o )
+
+src/Graphics/Vty/Span.hs:19:1: Warning:
+    Module ‘Control.Monad.ST.Strict’ does not export ‘unsafeIOToST’
+[14 of 20] Compiling Graphics.Vty.Terminal.Generic ( src/Graphics/Vty/Terminal/Generic.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Terminal/Generic.o )
+[15 of 20] Compiling Graphics.Vty.Inline ( src/Graphics/Vty/Inline.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Inline.o )
+[16 of 20] Compiling Graphics.Vty.Terminal.TerminfoBased ( src/Graphics/Vty/Terminal/TerminfoBased.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Terminal/TerminfoBased.o )
+
+src/Graphics/Vty/Terminal/TerminfoBased.hs:80:47: Warning:
+    In the use of ‘Terminfo.tiGetStr’
+    (imported from System.Console.Terminfo, but defined in System.Console.Terminfo.Base):
+    Deprecated: "use tiGetOutput instead."
+
+src/Graphics/Vty/Terminal/TerminfoBased.hs:88:47: Warning:
+    In the use of ‘Terminfo.tiGetStr’
+    (imported from System.Console.Terminfo, but defined in System.Console.Terminfo.Base):
+    Deprecated: "use tiGetOutput instead."
+
+src/Graphics/Vty/Terminal/TerminfoBased.hs:125:47: Warning:
+    In the use of ‘Terminfo.tiGetStr’
+    (imported from System.Console.Terminfo, but defined in System.Console.Terminfo.Base):
+    Deprecated: "use tiGetOutput instead."
+[17 of 20] Compiling Graphics.Vty.Terminal.MacOSX ( src/Graphics/Vty/Terminal/MacOSX.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Terminal/MacOSX.o )
+[18 of 20] Compiling Graphics.Vty.Terminal.XTermColor ( src/Graphics/Vty/Terminal/XTermColor.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Terminal/XTermColor.o )
+[19 of 20] Compiling Graphics.Vty.Terminal ( src/Graphics/Vty/Terminal.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty/Terminal.o )
+[20 of 20] Compiling Graphics.Vty     ( src/Graphics/Vty.hs, dist/dist-sandbox-caad765c/build/Graphics/Vty.o )
+In-place registering vty-4.7.5...
+Preprocessing executable 'vty-interactive-terminal-test' for vty-4.7.5...
+[ 1 of 21] Compiling Graphics.Vty.Attributes.Color ( src/Graphics/Vty/Attributes/Color.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/Attributes/Color.o )
+[ 2 of 21] Compiling Graphics.Vty.Attributes.Color240 ( src/Graphics/Vty/Attributes/Color240.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/Attributes/Color240.o )
+[ 3 of 21] Compiling Data.Terminfo.Parse ( src/Data/Terminfo/Parse.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Data/Terminfo/Parse.o )
+[ 4 of 21] Compiling Data.Marshalling ( src/Data/Marshalling.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Data/Marshalling.o )
+[ 5 of 21] Compiling Data.Terminfo.Eval ( src/Data/Terminfo/Eval.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Data/Terminfo/Eval.o )
+[ 6 of 21] Compiling Codec.Binary.UTF8.Width ( src/Codec/Binary/UTF8/Width.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Codec/Binary/UTF8/Width.o )
+[ 7 of 21] Compiling Graphics.Vty.LLInput ( src/Graphics/Vty/LLInput.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/LLInput.o )
+
+src/Graphics/Vty/LLInput.hs:163:89: Warning:
+    In the use of ‘tiGetStr’
+    (imported from System.Console.Terminfo, but defined in System.Console.Terminfo.Base):
+    Deprecated: "use tiGetOutput instead."
+[ 8 of 21] Compiling Graphics.Vty.DisplayRegion ( src/Graphics/Vty/DisplayRegion.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/DisplayRegion.o )
+[ 9 of 21] Compiling Graphics.Vty.Attributes ( src/Graphics/Vty/Attributes.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/Attributes.o )
+[10 of 21] Compiling Graphics.Vty.Image ( src/Graphics/Vty/Image.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/Image.o )
+[11 of 21] Compiling Graphics.Vty.Picture ( src/Graphics/Vty/Picture.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/Picture.o )
+[12 of 21] Compiling Graphics.Vty.Span ( src/Graphics/Vty/Span.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/Span.o )
+[13 of 21] Compiling Graphics.Vty.DisplayAttributes ( src/Graphics/Vty/DisplayAttributes.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/DisplayAttributes.o )
+[14 of 21] Compiling Graphics.Vty.Terminal.Generic ( src/Graphics/Vty/Terminal/Generic.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/Terminal/Generic.o )
+[15 of 21] Compiling Graphics.Vty.Inline ( src/Graphics/Vty/Inline.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/Inline.o )
+[16 of 21] Compiling Graphics.Vty.Terminal.TerminfoBased ( src/Graphics/Vty/Terminal/TerminfoBased.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/Terminal/TerminfoBased.o )
+
+src/Graphics/Vty/Terminal/TerminfoBased.hs:80:47: Warning:
+    In the use of ‘Terminfo.tiGetStr’
+    (imported from System.Console.Terminfo, but defined in System.Console.Terminfo.Base):
+    Deprecated: "use tiGetOutput instead."
+
+src/Graphics/Vty/Terminal/TerminfoBased.hs:88:47: Warning:
+    In the use of ‘Terminfo.tiGetStr’
+    (imported from System.Console.Terminfo, but defined in System.Console.Terminfo.Base):
+    Deprecated: "use tiGetOutput instead."
+
+src/Graphics/Vty/Terminal/TerminfoBased.hs:125:47: Warning:
+    In the use of ‘Terminfo.tiGetStr’
+    (imported from System.Console.Terminfo, but defined in System.Console.Terminfo.Base):
+    Deprecated: "use tiGetOutput instead."
+[17 of 21] Compiling Graphics.Vty.Terminal.MacOSX ( src/Graphics/Vty/Terminal/MacOSX.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/Terminal/MacOSX.o )
+[18 of 21] Compiling Graphics.Vty.Terminal.XTermColor ( src/Graphics/Vty/Terminal/XTermColor.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/Terminal/XTermColor.o )
+[19 of 21] Compiling Graphics.Vty.Terminal ( src/Graphics/Vty/Terminal.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty/Terminal.o )
+[20 of 21] Compiling Graphics.Vty     ( src/Graphics/Vty.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Graphics/Vty.o )
+[21 of 21] Compiling Main             ( test/interactive_terminal_test.hs, dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test-tmp/Main.o )
+Loading package ghc-prim ... linking ... done.
+Loading package integer-gmp ... linking ... done.
+Loading package base ... linking ... done.
+Loading package array-0.5.0.0 ... linking ... done.
+Loading package deepseq-1.3.0.2 ... linking ... done.
+Loading package primitive-0.5.3.0 ... linking ... done.
+Loading package vector-0.10.11.0 ... linking ... done.
+Loading package bytestring-0.10.4.0 ... linking ... done.
+Loading package utf8-string-0.3.7 ... linking ... done.
+Loading package old-locale-1.0.0.6 ... linking ... done.
+Loading package time-1.4.2 ... linking ... done.
+Loading package unix-2.7.0.1 ... linking ... done.
+Loading package terminfo-0.4.0.0 ... linking ... done.
+Loading package containers-0.5.5.1 ... linking ... done.
+Loading package pretty-1.1.1.1 ... linking ... done.
+Loading package template-haskell ... linking ... done.
+Loading package string-qq-0.0.2 ... linking ... done.
+Loading package transformers-0.3.0.0 ... linking ... done.
+Loading package mtl-2.1.3.1 ... linking ... done.
+Loading package text-1.1.1.3 ... linking ... done.
+Loading package parsec-3.1.5 ... linking ... done.
+Loading package parallel-3.2.0.4 ... linking ... done.
+Linking dist/dist-sandbox-caad765c/build/vty-interactive-terminal-test/vty-interactive-terminal-test ...
+Creating package registration file: /tmp/pkgConf-vty-4.728535.5
+Installing library in
+/home/marius/wip/subsonic-cli/.cabal-sandbox/lib/x86_64-linux-ghc-7.8.3/vty-4.7.5
+Installing executable(s) in /home/marius/wip/subsonic-cli/.cabal-sandbox/bin
+Registering vty-4.7.5...

@@ -1,0 +1,66 @@
+\section{Deferring to Child Widgets}
+\label{sec:deferring}
+
+Widget-wrapping widget types are common in \vtyui, since we use this
+technique to influence rendering and other behaviors.  As a result,
+when implementing a wrapper widget it is important to decide which
+behaviors should be deferred to the child widget and which behaviors
+should be overridden.
+
+In this section we'll create a wrapper widget type called \fw{Wrapper}
+and we'll implement all of its behaviors to illustrate how the
+behaviors can be deferred in each case.
+
+We'll start with the type.
+
+\begin{haskellcode}
+ data Wrapper a = Wrapper (Widget a)
+\end{haskellcode}
+
+Then the implementation of the constructor:\footnote{This widget
+  implementation uses the ``relaying'' functions we described in
+  Section \ref{sec:containers_and_input}.}
+
+\begin{haskellcode}
+ newWrapper :: Widget a -> IO (Widget (Wrapper a))
+ newWrapper child = do
+   wRef <- newWidget (Wrapper child) $ \w ->
+     w { growHorizontal_ = growHorizontal child
+       , growVertical_ = growVertical child
+       , setCurrentPosition_ =
+           \_ pos -> setCurrentPosition child pos
+       , getCursorPosition_ =
+           const $ getCursorPosition child
+       , render_ =
+         \_ sz ctx -> render child sz ctx
+       }
+
+   wRef `relayFocusEvents` child
+   wRef `relayKeyEvents` child
+   return wRef
+\end{haskellcode}
+
+This demonstration highlights some important features of container
+widget implementations:
+
+\begin{itemize}
+\item The state type of the wrapped widget, \fw{a}, is preserved in
+  the type of the wrapper widget itself, \fw{Wrapper a}.
+\item We referred directly to \fw{child} instead of using
+  \fw{getState} in all of the functions; the reason is because we
+  don't care about allowing the child to be replaced with a different
+  widget at a later time.  If that is something you want to support,
+  then you \textit{must} use \fw{getState} to ensure that you have the
+  latest version of the widget's state and, as a result, the correct
+  child widget reference.
+\item We defer all behaviors to the child: growth policy, rendering,
+  positioning, cursor behavior, focus events, and key events.  Most
+  container widgets defer most of these things.
+\end{itemize}
+
+In some cases -- such as with \fw{Centered} widgets or anything that
+adds padding -- the growth policies will need to be changed to reflect
+how the final result should be laid out.  In those cases, it is
+sufficient to provide an implementation for the growth policy
+functions that returns the desired value rather than calling that of
+the child widget.

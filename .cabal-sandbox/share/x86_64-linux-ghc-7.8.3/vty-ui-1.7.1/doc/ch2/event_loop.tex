@@ -1,0 +1,217 @@
+\section{The \vtyui\ Event Loop}
+\label{sec:event_loop}
+
+\vtyui\ manages the user input event loop for you, and once you have
+created and populated a \fw{Collection}, you can invoke the main
+\vtyui\ event loop:
+
+\begin{haskellcode}
+ runUi c defaultContext
+\end{haskellcode}
+
+The first parameter is the \fw{Collection} you have created; the
+second parameter is a \fw{Ren\-der\-Con\-text}.  Here we use the
+``default'' rendering context provided by the library.  The
+``rendering context'' provides three key pieces of functionality:
+
+\begin{itemize}
+\item The "skin" to use when rendering ASCII lines, corners, and
+      intersections
+\item The default ``normal'' (unfocused) attribute
+\item The default ``focused'' attribute
+\item The current ``override'' attribute
+\end{itemize}
+
+The event loop will run until one of two conditions occurs:
+
+\begin{itemize}
+\item An exception of any kind is thrown; if an exception is thrown,
+  the event loop will shut down Vty cleanly and re-throw the
+  exception.
+\item An event handler or thread calls \fw{shutdownUi}; the
+  \fw{shutdownUi} function sends a signal to stop the event loop, at
+  which point control will be returned to your program.  The shutdown
+  signal goes into a queue with all of the other signals processed by
+  the event loop, such as key input events and scheduled actions (see
+  Section \ref{sec:concurrency}), but it will preempt them.  Note that
+  there is no \textit{guarantee} that there won't be some other signal
+  placed into the queue before you run \fw{shutdownUi}, such as when
+  another thread is running in parallel with an event handler which
+  calls \fw{shutdownUi}.
+\end{itemize}
+
+\subsection{Skinning}
+\label{sec:skinning}
+
+Some widgets, such as the \fw{Table} widget (see Section
+\ref{sec:tables}) and the horizontal and vertical border widgets
+\fw{VBorder} and \fw{HBorder} (see Section \ref{sec:borders}), use
+line-drawing characters to draw borders between interface elements.
+Some terminal emulators are capable of drawing Unicode characters,
+which make for nicer-looking line-drawing.  Other terminal emulators
+work best only with ASCII.  The default rendering context uses a
+Unicode line-drawing skin, which you can change to any other skin (or
+your own) as follows:
+
+\begin{haskellcode}
+ runUi c $ defaultContext { skin = asciiSkin }
+\end{haskellcode}
+
+The library provides \fw{Skin}s in the \fw{Skins} module.
+
+\subsection{Attributes}
+\label{sec:attributes}
+
+An attribute may consist of one or more settings of foreground and
+background color and text style, such as underline or blink.  The
+default attributes specified in the \fw{Render\-Context} control how
+widgets appear.
+
+Every widget has the ability to store its own normal and focused
+attributes.  When widgets are rendered, they use these attributes; if
+they are not set, the widgets default to using those specified by the
+rendering context.  The only exception is the ``override'' attribute.
+Instead of ``falling back'' to this attribute, the presence of this
+attribute requires widgets to use it.  For example, this attribute is
+used in the \fw{List} widget so that the currently-selected list item
+can be highlighted, which requires the \fw{List} to override the
+item's default attribute configuration.
+
+Widgets provide an API for setting these attributes using the
+\fw{Has\-Normal\-Attr} and \fw{Has\-Focus\-Attr} type classes.  The
+reason we use type classes to provide this API is so that third-party
+widgets may also provide this functionality.  The API is defined in
+the \fw{Core} module and is as follows:
+
+\begin{haskellcode}
+ setNormalAttribute w attr
+ setFocusAttribute w attr
+\end{haskellcode}
+
+Convenience combinators also exist:
+
+\begin{haskellcode}
+ w <- someWidget
+      >>= withNormalAttribute attr
+      >>= withFocusAttribute attr
+\end{haskellcode}
+
+The \fw{attr} value is a Vty attribute.  A Vty attribute may provide
+any (but not necessarily all!) of the settings that make up an
+attribute; any setting not specified (e.g. background color) can fall
+back to the default.  As a result, the attribute of a widget is the
+\textit{combination} of its attribute and the attribute from the
+rendering context.  The widget's settings will take precedence, but
+any setting not provided will default to the rendering context.
+
+Consider this example:
+
+\begin{haskellcode}
+ w <- someWidget
+ setNormalAttribute w (fgColor white)
+ runUi c $ defaultContext { normalAttr = yellow `on` blue }
+\end{haskellcode}
+
+In this example, the widget \fw{w} will use a normal attribute of
+white on a blue background, since it specified only a foreground color
+as its normal attribute.  This kind of precedence facilitates visual
+consistency across your entire interface.
+
+In addition, container widgets are designed to pass their normal and
+focused attributes onto their children during the rendering process;
+this way, unless a child specifies a default with
+\fw{setNormalAttribute} or similar, it uses its parent's attributes.
+Again, this facilitates consistency across the interface while only
+requiring the you to specify attributes where you want to deviate from
+the default.
+
+You can create attributes with varying levels of specificity by using
+the \vtyui\ API:
+
+\begin{tabular}{|l|l|} \hline
+Expression & Resulting attribute \\ \hline
+\fw{fgColor blue} & foreground only \\ \hline
+\fw{bgColor blue} & background only \\ \hline
+\fw{style underline} & style only \\ \hline
+\fw{blue `on` red} & foreground and background \\ \hline
+\fw{someAttr `withStyle` underline} & adding a style \\ \hline
+\end{tabular}
+
+The Vty \fw{def\_attr} value's default configuration is used as a
+basis for all partially-specified attributes.  The functions described
+above are defined in the \fw{Util} module.
+
+\subsection{\vtyui\ and Concurrency}
+\label{sec:concurrency}
+
+So far we have only seen programs which modify widget state when user
+input events occur.  Such changes in widget state are safe, because
+they are triggered by the \vtyui\ event loop.\footnote{``Unsafe''
+  updates are those that are not guaranteed to be reflected in the
+  most-recently-rendered interface.}  However, your program will more
+than likely need to trigger some widget state changes due to other
+external events -- such as network events -- and \vtyui\ provides a
+mechanism for doing this in a safe way.
+
+\vtyui\ provides a function in the \fw{Core} module called
+\fw{schedule} which takes an \fw{IO} action and ``schedules'' it to be
+run by the main event loop.  It will be run as soon as possible, i.e.,
+once the program control flow has returned to the event loop.  Since
+the scheduled action will be run by the event loop, it's important
+that the action not take very long; if it's important to block (e.g.,
+by calling \fw{Control.Concurrent.threadDelay}), you should do that in
+a thread and only call \fw{schedule} when you have work to do.
+
+Consider this example, in which a text widget called \fw{timeText}
+gets updated with the current time every second:
+
+\begin{haskellcode}
+ forkIO $
+   forever $ do
+     schedule $ do
+       t <- getCurrentTime
+       setText timeText $
+         formatTime defaultTimeLocale rfc822DateFormat t
+     threadDelay 1000000
+\end{haskellcode}
+
+In this example the blocking occurs outside of the scheduled code, and
+only when we have an update for the clock display do we schedule an
+action to run.
+
+Some built-in widgets will almost always be used in this way; for an
+example, take a look at the \fw{ProgressBar} widget in the
+\fw{ProgressBar} module (see Section \ref{sec:progress_bars}).
+
+\subsection{Handling Resize Events}
+
+When \vtyui\ renders a widget, you can be notified if its size changes.  This
+might be useful if, for example, you want to change the visual style or state
+of a widget when its size crosses a threshold.  To do this, register a resize
+event handler on the widget with \fw{onResize} as follows:
+
+\begin{haskellcode}
+ w <- someWidget
+ w `onResize` \(oldSize, newSize) -> do
+   ...
+\end{haskellcode}
+
+The resize handler will be given the old size before the change and the new
+size after the change.  Initially every widget has size \fw{(0, 0)} so your
+handler will always run at least once with an "old" size of \fw{(0, 0)} and a
+"new" size of the widget's initial size.
+
+The \fw{onResize} mechanism has a serious caveat.  Consider a resize handler
+which results in another size change, such as a call to \fw{setText} which
+makes a text widget larger.  Such a change would spur another size change and
+would result in a non-terminating sequence of calls which would probably crash
+your program or, if not, just use all of your CPU.  To avoid this, ensure that
+any resize handlers don't result in size changes; you can change the visual
+style, attributes, etc., of your widget, but if you change contents enough, a
+resize handler loop will result.
+
+Finally, since resize handlers run during the rendering process, any changes to
+widgets which require a redraw to be visible on the screen will need to use the
+\fw{schedule} function (see Section \ref{sec:concurrency}).  This will ensure
+that visual changes to a widget made during rendering will force another
+rendering.

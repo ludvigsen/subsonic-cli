@@ -1,0 +1,43 @@
+[1 of 1] Compiling Main             ( dist/dist-sandbox-caad765c/setup/setup.hs, dist/dist-sandbox-caad765c/setup/Main.o )
+Linking ./dist/dist-sandbox-caad765c/setup/setup ...
+Configuring SDL-0.6.5...
+configure: WARNING: unrecognized options: --with-compiler, --with-gcc
+checking for sdl-config... /usr/bin/sdl-config
+configure: creating ./config.status
+config.status: creating config.mk
+config.status: creating SDL.buildinfo
+config.status: creating includes/HsSDLConfig.h
+config.status: includes/HsSDLConfig.h is unchanged
+configure: WARNING: unrecognized options: --with-compiler, --with-gcc
+Building SDL-0.6.5...
+Preprocessing library SDL-0.6.5...
+[ 1 of 16] Compiling Graphics.UI.SDL.Utilities ( Graphics/UI/SDL/Utilities.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Utilities.o )
+[ 2 of 16] Compiling Graphics.UI.SDL.CPUInfo ( Graphics/UI/SDL/CPUInfo.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/CPUInfo.o )
+[ 3 of 16] Compiling Graphics.UI.SDL.Version ( dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Version.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Version.o )
+
+Graphics/UI/SDL/Version.hsc:17:10: Warning:
+    No explicit implementation for
+      either ‘Foreign.Storable.poke’
+             or
+             ‘Foreign.Storable.pokeElemOff’
+             or
+             ‘Foreign.Storable.pokeByteOff’
+    In the instance declaration for ‘Storable SDLVersion’
+[ 4 of 16] Compiling Graphics.UI.SDL.Keysym ( dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Keysym.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Keysym.o )
+[ 5 of 16] Compiling Graphics.UI.SDL.Color ( Graphics/UI/SDL/Color.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Color.o )
+[ 6 of 16] Compiling Graphics.UI.SDL.Audio ( dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Audio.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Audio.o )
+[ 7 of 16] Compiling Graphics.UI.SDL.Types ( dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Types.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Types.o )
+[ 8 of 16] Compiling Graphics.UI.SDL.Time ( Graphics/UI/SDL/Time.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Time.o )
+[ 9 of 16] Compiling Graphics.UI.SDL.Rect ( dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Rect.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Rect.o )
+[10 of 16] Compiling Graphics.UI.SDL.General ( dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/General.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/General.o )
+[11 of 16] Compiling Graphics.UI.SDL.WindowManagement ( dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/WindowManagement.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/WindowManagement.o )
+[12 of 16] Compiling Graphics.UI.SDL.RWOps ( Graphics/UI/SDL/RWOps.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/RWOps.o )
+[13 of 16] Compiling Graphics.UI.SDL.Video ( dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Video.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Video.o )
+[14 of 16] Compiling Graphics.UI.SDL.Events ( dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Events.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Events.o )
+[15 of 16] Compiling Graphics.UI.SDL.Joystick ( dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Joystick.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL/Joystick.o )
+[16 of 16] Compiling Graphics.UI.SDL  ( Graphics/UI/SDL.hs, dist/dist-sandbox-caad765c/build/Graphics/UI/SDL.o )
+In-place registering SDL-0.6.5...
+Creating package registration file: /tmp/pkgConf-SDL-0.622719.5
+Installing library in
+/home/marius/wip/subsonic-cli/.cabal-sandbox/lib/x86_64-linux-ghc-7.8.3/SDL-0.6.5
+Registering SDL-0.6.5...
